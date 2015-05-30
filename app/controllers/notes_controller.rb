@@ -17,7 +17,20 @@ class NotesController < ApplicationController
         @note = Note.new
     end
 
-    def delete
+    def edit
+        @note = Note.find(params[:id])
+    end
+
+    def update
+        @note = Note.find(params[:id])
+        if @note.update_attributes(user_params)
+            redirect_to action: "index"
+        else
+            render 'edit'
+        end
+    end
+
+    def destroy
         @note = Note.find(params[:id])
         @note.destroy
         redirect_to action: "index"
