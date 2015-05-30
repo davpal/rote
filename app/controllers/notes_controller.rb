@@ -23,7 +23,7 @@ class NotesController < ApplicationController
 
     def update
         @note = Note.find(params[:id])
-        if @note.update_attributes(user_params)
+        if @note.update_attributes(note_params)
             redirect_to action: "index"
         else
             render 'edit'

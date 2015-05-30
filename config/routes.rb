@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'notes#index'
   resources :notes
+  post '/notes/new' => 'notes#create'
+  post '/notes/:id/edit' => 'notes#update'
 
     # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
