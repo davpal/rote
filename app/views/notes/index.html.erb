@@ -1,13 +1,13 @@
 <h1>Your notes:</h1>
 
-<%= link_to 'Add note', new_note_path %>
+<%= link_to image_tag('add.png'), new_note_path %>
 
 <% @notes.each do |note| %>
   <div class="note">
     <h2><%= note.title %></h2>
     <p><%= note.created_at.strftime("%d %b %Y") %></p>
     <p><%= note.text %></p>
-    <%= link_to 'Edit', edit_note_path(id: note.id) %>
-    <%= link_to 'Delete', note_path(id: note.id), method: :delete %>
+    <%= link_to image_tag('edit.png'), edit_note_path(id: note.id) %>
+    <%= link_to image_tag('delete.png'), note_path(id: note.id), method: :delete %>
   </div>
 <% end %>
