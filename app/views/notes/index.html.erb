@@ -1,11 +1,12 @@
-<h1>Your notes:</h2>
+<h1>Your notes:</h1>
 
 <a href="new">Add note</a>
 
 <% @notes.each do |note| %>
   <div class="note">
     <h2><%= note.title %></h2>
-    <p><%= note.created_at.strftime("%d %b %Y") %></h2>
+    <p><%= note.created_at.strftime("%d %b %Y") %></p>
     <p><%= note.text %></p>
+    <%= link_to 'Delete', note_path(id: note.id), method: :delete %>
   </div>
 <% end %>

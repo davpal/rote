@@ -17,6 +17,12 @@ class NotesController < ApplicationController
         @note = Note.new
     end
 
+    def delete
+        @note = Note.find(params[:id])
+        @note.destroy
+        redirect_to action: "index"
+    end
+
     private
     def note_params
         params.require(:note).permit(:title, :text, :created_at)
