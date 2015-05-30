@@ -8,6 +8,7 @@
     <p class="date"><%= note.created_at.strftime("%d %b %Y") %></p>
     <p><%= note.text %></p>
     <%= link_to image_tag('edit.png'), edit_note_path(id: note.id) %>
-    <%= link_to image_tag('delete.png'), note_path(id: note.id), method: :delete %>
+    <%= link_to image_tag('delete.png'), note_path(id: note.id), method: :delete,
+      data: { confirm: "Are you sure?" } %>
   </div>
 <% end %>
