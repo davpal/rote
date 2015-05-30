@@ -3,5 +3,5 @@
 Ruby on rails note application.
 
 === Implemented features
-* Adding notes
-* Listing all notes
+* Add, Edit, Delete note
+* List all notes
