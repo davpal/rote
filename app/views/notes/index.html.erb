@@ -1,0 +1,11 @@
+<h1>Your notes:</h2>
+
+<a href="new">Add note</a>
+
+<% @notes.each do |note| %>
+  <div class="note">
+    <h2><%= note.title %></h2>
+    <p><%= note.created_at.strftime("%d %b %Y") %></h2>
+    <p><%= note.text %></p>
+  </div>
+<% end %>
