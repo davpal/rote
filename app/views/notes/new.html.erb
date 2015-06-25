@@ -1,4 +1,7 @@
 <h2>Add note</h2>
 <%= form_for :note do |f| %>
-    <%= render 'fields', f: f %>
+    <fieldset>
+      <legend>Add note</legend>
+      <%= render 'fields', f: f %>
+    </fieldset>
 <% end %>
