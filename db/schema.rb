@@ -11,13 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529231423) do
+ActiveRecord::Schema.define(version: 20150704222656) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title",      limit: 255
     t.text     "text",       limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+  end
+
+  create_table "notes_tags", force: :cascade do |t|
+    t.integer "note_id", limit: 4
+    t.integer "tag_id",  limit: 4
+  end
+
+  add_index "notes_tags", ["note_id"], name: "index_notes_tags_on_note_id", using: :btree
+  add_index "notes_tags", ["tag_id"], name: "index_notes_tags_on_tag_id", using: :btree
+
+  create_table "tags", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
