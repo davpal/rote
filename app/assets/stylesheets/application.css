@@ -1,27 +1,4 @@
-body {
-  font-family: Futura, Trebuchet MS, Arial, sans-serif
-}
-
-h1 {
-  text-align: center;
-}
-
-#container {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.note {
-  border-bottom: 1px solid #eee;
-  margin-bottom: 2%;
-}
-
-h2 {
-  margin: 0;
-}
-
-.date {
-  font-size: small;
-  margin: 0;
-  padding: 0;
-}
+/*
+ *= require_self
+ *= require_tree .
+*/
