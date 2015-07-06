@@ -1,9 +1,15 @@
 class SessionsController < ApplicationController
-  def index
-
+  def new
   end
 
-  def new
-
+  def create
+    @user = User.find_by_email(params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      redirect_to '/'
+    else
+      flash[:danger] = 'Invalid login information'
+      render 'new'
+    end
   end
 end
