@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to '/'
     else
-      flash[:danger] = 'Invalid login information'
+      flash.now[:danger] = 'Invalid login information'
       render 'new'
     end
   end
